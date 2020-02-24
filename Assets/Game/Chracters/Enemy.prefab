@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718fba613c8f0f747992fccee81cd8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 40
 --- !u!114 &2257211568261576255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353836930973399360, guid: a1d090dbf6ff67d41b64502a8d2a6d09,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d090dbf6ff67d41b64502a8d2a6d09, type: 3}
