@@ -20,7 +20,7 @@ namespace RPG.Combat
             if (target == null) return;
             if(target.IsDead()) return;
 
-            if (target != null && !GetIsInRange())
+            if (!GetIsInRange())
             {
                 GetComponent<Mover>().MoveTo(target.transform.position);
             }
@@ -34,7 +34,7 @@ namespace RPG.Combat
         // this calls the attack animation after the timeSinceLastAttack becomes greater than the value of timeBetweenAttacks
         private void AttackBehaviour()
         {
-            transform.LookAt(target.transform.position);
+            transform.LookAt(target.transform);
             if(timeSinceLastAttack > timeBetweenAttacks)
             {
                 TriggerAttack();
@@ -58,7 +58,6 @@ namespace RPG.Combat
 
         public void Attack(GameObject combatTarget)
         {
-
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
         }
@@ -79,6 +78,7 @@ namespace RPG.Combat
         {
             StopAttack();
             target = null;
+            GetComponent<Mover>().Cancel();
         }
 
         private void StopAttack()
